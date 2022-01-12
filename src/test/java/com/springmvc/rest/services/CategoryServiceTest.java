@@ -42,7 +42,7 @@ class CategoryServiceTest {
 
         List<CategoryDTO> categoryDTOList = categoryService.getAllCategories();
 
-        assertEquals(3,categoryDTOList.size());
+        assertEquals(categories.size(), categoryDTOList.size());
 
     }
 
