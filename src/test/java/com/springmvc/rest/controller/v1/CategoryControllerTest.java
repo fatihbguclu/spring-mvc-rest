@@ -1,7 +1,8 @@
-package com.springmvc.rest.controller;
+package com.springmvc.rest.controller.v1;
 
 import com.springmvc.rest.api.v1.model.CategoryDTO;
 import com.springmvc.rest.api.v1.model.CategoryListDTO;
+import com.springmvc.rest.controller.v1.CategoryController;
 import com.springmvc.rest.services.CategoryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,7 +23,6 @@ import static org.hamcrest.Matchers.hasSize;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 class CategoryControllerTest {

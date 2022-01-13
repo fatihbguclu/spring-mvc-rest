@@ -5,10 +5,12 @@ import com.springmvc.rest.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper()
+@Mapper(componentModel = "spring")
 public interface CustomerMapper {
 
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
     CustomerDTO customerToCustomerDTO(Customer customer);
+
+    Customer customerDTOTocustomer(CustomerDTO customerDTO);
 }

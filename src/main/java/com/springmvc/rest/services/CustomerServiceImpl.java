@@ -3,11 +3,14 @@ package com.springmvc.rest.services;
 import com.springmvc.rest.api.v1.mapper.CustomerMapper;
 import com.springmvc.rest.api.v1.model.CustomerDTO;
 import com.springmvc.rest.api.v1.model.CustomerListDTO;
+import com.springmvc.rest.domain.Customer;
 import com.springmvc.rest.repositories.CustomerRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerMapper customerMapper;
@@ -42,5 +45,17 @@ public class CustomerServiceImpl implements CustomerService {
                 .orElseThrow(RuntimeException::new);
 
         return customerDTO;
+    }
+
+    @Override
+    public CustomerDTO createCustomer(CustomerDTO customerDTO){
+
+        Customer customer = customerMapper.customerDTOTocustomer(customerDTO);
+        Customer savedCustomer = customerRepository.save(customer);
+
+        CustomerDTO returnCustomerDTO = customerMapper.customerToCustomerDTO(savedCustomer);
+        returnCustomerDTO.setCustomerUrl("/api/v1/customer/" + savedCustomer.getId());
+
+        return returnCustomerDTO;
     }
 }

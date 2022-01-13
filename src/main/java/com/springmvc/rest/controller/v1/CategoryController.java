@@ -1,4 +1,4 @@
-package com.springmvc.rest.controller;
+package com.springmvc.rest.controller.v1;
 
 import com.springmvc.rest.api.v1.model.CategoryDTO;
 import com.springmvc.rest.api.v1.model.CategoryListDTO;
