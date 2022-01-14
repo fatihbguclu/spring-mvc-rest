@@ -6,10 +6,12 @@ import com.springmvc.rest.api.v1.model.VendorListDTO;
 import com.springmvc.rest.controller.v1.VendorController;
 import com.springmvc.rest.domain.Vendor;
 import com.springmvc.rest.repositories.VendorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class VendorServiceImpl implements VendorService {
 
     private VendorMapper vendorMapper;
